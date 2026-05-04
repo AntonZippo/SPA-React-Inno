@@ -1,0 +1,41 @@
+.header{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    min-height: 10vh;
+    margin: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.search{
+    display:flex ;
+    justify-content: center;
+    width: 300px;
+    gap: 5px;
+    height: 30px;
+    input{
+        height: 1;
+        width: 80%;
+        font-size: larger;
+    }
+    button{
+        height: 1;
+        width: 15%;
+        font-size: medium;
+    }
+}
+
+.autorize{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    button{
+        width: 100%;
+    }
+}
+
