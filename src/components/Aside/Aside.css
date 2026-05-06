@@ -1,30 +1,109 @@
-.categories{
-    box-sizing: border-box;
-    border: 1px solid black;
-    width: 100%;
-    margin: auto;
-    padding-left: 1%;
-    padding-right: 1%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;       
+.categories {
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  padding: 0 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .categories h3 {
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
 .categories button {
-  text-align: left;  
+  text-align: left;
   padding: 8px 12px;
-  width: 100%;       
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  font-size: medium;
+  background-color: rgb(222, 231, 231);
 }
 
+.categories .active{
+    background-color: rgb(68, 75, 75);
+    color: white;
+}
 
+.categories button:hover{
+    background-color: #bbbfc4;
+}
+.categories button.active:hover {
+  background-color: rgb(68, 75, 75); 
+  cursor: default;
+}
 
-.categoryList{
-    ul{
-        padding-left: 0px;
-    }
-    
+.filters {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  font-size: larger;
+}
+
+.filterForm {
+  min-width: 100%;
+  padding-right: 20px;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+
+.price-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.price-field {
+  flex: 1;
+}
+
+.price-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: medium;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.rating-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  
+}
+
+.rating-row input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: medium;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+}
+
+.filter-buttons button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: #2c7da0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.filter-buttons button:last-child {
+  background: #6c757d;
 }

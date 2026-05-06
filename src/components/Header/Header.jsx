@@ -10,16 +10,18 @@ function Header({ onSearch, searchQuery, onClearSearch }) {
 
     useEffect(()=>{
         setSearchInput(searchQuery || "");
-        inputRef.current.focus();
     },[searchQuery]);
 
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     function handleSubmit(e){
         e.preventDefault();
         onSearch(searchInput)
     };
 
-    function handleClear(e){
+    function handleClear(){
         setSearchInput("");
         onClearSearch();
     }

@@ -99,7 +99,6 @@
   background: #1f5e7a;
 }
 
-/* Адаптив для мобилок */
 @media (max-width: 768px) {
   .product-container {
     grid-template-columns: 1fr;
@@ -114,7 +113,7 @@
   }
 }
 
-/* Состояния загрузки и ошибок */
+
 .product-loading,
 .product-error,
 .product-not-found {

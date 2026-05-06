@@ -20,7 +20,7 @@ function LoginPage() {
       <div className="login-container">
         <h2>Enter an acc</h2>
         
-        <form onSubmit={handleSubmit}>  {/* ← ДОБАВИТЬ ЭТО */}
+        <form onSubmit={handleSubmit}>  
           <div className="form-group">
             <label>Email</label>
             <input ref={inputRef} type="email" placeholder="example@mail.com" />

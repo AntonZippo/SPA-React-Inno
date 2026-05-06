@@ -10,13 +10,14 @@
 }
 
 .footer {
-  margin-top: auto;
+  margin-top: 15px;
   padding: 20px;
   text-align: center;
   border-top: 1px solid #ddd;
 }
 
 .main-layout {
+   flex: 1;
   display: grid;
   grid-template-columns: 280px 1fr;
   width: 95vw;
@@ -29,7 +30,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border: 1px solid red;
   align-items: center;
 }
 
@@ -38,7 +38,10 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   justify-content: center;
   gap: 20px;
-  border: 1px solid green;
   width: 100%;
   text-align: center;
+}
+
+.sidebar{
+  margin-right: 5px;
 }

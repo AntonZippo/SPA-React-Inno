@@ -14,7 +14,7 @@ function ProductPage() {
         const response = await fetch(`https://dummyjson.com/products/${id}`);
         
         if (!response.ok) {
-          throw new Error('Товар не найден');
+          throw new Error('Product not found');
         }
         
         const data = await response.json();
