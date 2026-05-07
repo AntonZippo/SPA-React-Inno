@@ -1,5 +1,6 @@
 import react from "react";
 import './Footer.css'
+import { memo } from "react";
 
 function Footer() {
   return (
@@ -8,4 +9,4 @@ function Footer() {
     </div>
   );
 }
-export default Footer;
+export default memo(Footer);

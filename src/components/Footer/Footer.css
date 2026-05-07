@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  max-width: var(--content-max-width, 1200px);
+  margin-inline: auto;
+  margin-top: auto;
+  padding: var(--page-padding, 1rem);
+  padding-top: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border, #dfe3e8);
+  color: var(--color-text-muted, #5c636a);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: var(--color-surface, #fff);
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.8125rem;
+    padding-inline: var(--page-padding, 12px);
+  }
+}

@@ -1,0 +1,45 @@
+.card-list-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.card-list-sentinel {
+  height: 1px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.card-list-message {
+  padding: 1.125rem 1rem;
+  text-align: center;
+  color: var(--color-text-muted, #5c636a);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #dfe3e8);
+  border-radius: var(--radius-md, 10px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.06));
+}
+
+.card-list-error {
+  color: #8a1525;
+  border-color: rgba(176, 0, 32, 0.25);
+  background: #fef5f6;
+}
+
+.card-list-more {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent, #2c7da0);
+  background: rgba(44, 125, 160, 0.08);
+  border-style: dashed;
+}
+
+@media (max-width: 480px) {
+  .card-list-message {
+    padding: 1rem 0.875rem;
+    font-size: 0.875rem;
+  }
+}

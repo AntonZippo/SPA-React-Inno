@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import ProductPage from './pages/ProductPage';
 import LoginPage from './pages/LoginPage';
 import { useGetAllProductsQuery, useSearchProductsQuery } from './store/api';
+import NotFound from './pages/NotFound';
 
 
 function App(){
@@ -105,6 +106,7 @@ return (
           }/>
           <Route path="/login" element={<LoginPage/>} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
       <Footer />  
