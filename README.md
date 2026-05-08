@@ -4,7 +4,6 @@ A single-page React application that presents a product catalog backed by the pu
 
 ## Features
 
-
 - **Filtering** — Category selection, min/max price, and minimum rating (price and rating are applied in the browser on loaded pages; the API does not support those filters).
 - **Search** — Full-text search against DummyJSON; category can be combined with search on the client.
 - **Product page** — Fetches a single product by id from DummyJSON.
