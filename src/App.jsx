@@ -10,7 +10,6 @@ import LoginPage from './pages/LoginPage';
 import { useGetAllProductsQuery, useSearchProductsQuery } from './store/api';
 import NotFound from './pages/NotFound';
 
-
 function App(){
 
 const [selectedCategory, setSelectedCategory] = useState("all");
@@ -19,45 +18,16 @@ const [maxPrice, setMaxPrice] = useState(10000)
 const [minPrice, setMinPrice] = useState(0)
 const [minRate, setMinRating] = useState(0)
 const [filterState , setFilterState] = useState(null)
+const [page, setPage] = useState(1);
 
+const limit = 12;
+const skip = (page - 1) * limit;
 
-const { data: allData } = useGetAllProductsQuery();
-const { data: searchData } = useSearchProductsQuery(searchQuery, {
-  skip: !searchQuery, 
-});
-
-async function fetchAllProducts() {
-  const response = await fetch("https://dummyjson.com/products?limit=0");
-  const data = await response.json();
-  setProducts(data.products);
-}
-
-
-function filteredProducts(products){
-  return products.filter(product => {
-  if (selectedCategory !== "all" && product.category !== selectedCategory) {
-    return false;
-  }
-  return true;
-});
-};
-
-function handleCategoryChange(category) {
-  setSelectedCategory(category);
-  setSearchQuery(""); 
-}
-
-function clearSearch() {
-  setSearchQuery("");
-}
-
-function filterSet(topPrice,lowRate){
-  setFilterState({topPrice : topPrice , lowRate : lowRate})
-  console.log(topPrice,lowRate);
-}
-
-
-
+const { data: allData } = useGetAllProductsQuery({ limit: 0, skip: 0 });
+const { data: searchData } = useSearchProductsQuery(
+  { query: searchQuery, limit: 0, skip: 0 },
+  { skip: !searchQuery }
+);
 
 let rawProducts = [];
 
@@ -67,13 +37,32 @@ let rawProducts = [];
     rawProducts = allData?.products ?? [];
   };
 
-
 const finalProduct = rawProducts.filter((product) => {
   if (selectedCategory !== 'all' && product.category !== selectedCategory) return false;
   if (product.price < minPrice || product.price > maxPrice) return false;
   if (product.rating < minRate) return false;
   return true;
 });
+
+const totalPages = Math.ceil(finalProduct.length / limit);
+const paginatedProducts = finalProduct.slice(skip, skip + limit);
+
+useEffect(() => {
+  setPage(1);
+}, [searchQuery, selectedCategory, minPrice, maxPrice, minRate]);
+
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}, [page]);
+
+function handleCategoryChange(category) {
+  setSelectedCategory(category);
+  setSearchQuery(""); 
+}
+
+function clearSearch() {
+  setSearchQuery("");
+}
 
 return (
 
@@ -100,7 +89,18 @@ return (
                 />
               </aside>
               <div className="content">
-                <CardList products={finalProduct} />
+                <CardList products={paginatedProducts} />
+                {totalPages > 1 && (
+                  <div className="pagination">
+                    <button onClick={() => setPage(p => p - 1)} disabled={page === 1}>
+                      ← Back
+                    </button>
+                    <span>Page {page} from {totalPages}</span>
+                    <button onClick={() => setPage(p => p + 1)} disabled={page === totalPages}>
+                      Forward →
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           }/>
