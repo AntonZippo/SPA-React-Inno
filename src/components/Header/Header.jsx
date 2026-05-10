@@ -1,61 +1,31 @@
-import react, { useEffect, useState , useRef } from "react";
-import './Header.css';
+import React from "react";
+import "./Header.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function Header({ onSearch, searchQuery, onClearSearch }) {
+function Header() {
+  const cart = useSelector((state) => state.cart);
+  const cartCount = cart.length;
 
-    const [searchInput, setSearchInput] = useState(searchQuery || "");
-
-    const inputRef = useRef(null);
-
-    useEffect(()=>{
-        setSearchInput(searchQuery || "");
-    },[searchQuery]);
-
-    useEffect(() => {
-        inputRef.current.focus();
-    }, []);
-
-    function handleSubmit(e){
-        e.preventDefault();
-        onSearch(searchInput)
-    };
-
-    function handleClear(){
-        setSearchInput("");
-        onClearSearch();
-    }
-
-    return (
+  return (
     <div className="header">
-        <h2>Products things company</h2>
-       <form className="search" onSubmit={handleSubmit}>
-            <input 
-            ref = {inputRef}
-            type="text" 
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)} 
-            aria-label="search products" 
-            title="search" 
-            placeholder="Search products..." />
-            <button type="submit" aria-label="search button">🔍</button>
-            {searchInput && (
-                <button type="button" onClick={handleClear} aria-label="Clear button" >
-                   ✖ 
-                </button>
-            )}
-        </form>
-    <div className="autorize">
-        <Link to ="/login">
-            <button>Sign In</button>
+      <h2>Products things company</h2>
+      <Link to="/home" className="home-link">
+        Home
+      </Link>
+      <Link to="/cart" className="cart-link">
+        🛒 Cart : {cartCount}
+      </Link>
+      <div className="autorize">
+        <Link to="/login">
+          <button>Sign In</button>
         </Link>
-        <Link to ="/login">
-            <button>Registration</button>
+        <Link to="/login">
+          <button>Registration</button>
         </Link>
-        
+      </div>
     </div>
-    </div>
-    );
+  );
 }
 
 export default Header;
