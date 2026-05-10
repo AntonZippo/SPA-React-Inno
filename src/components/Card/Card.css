@@ -4,7 +4,9 @@
   overflow: hidden;
   box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.06));
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -19,9 +21,9 @@
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
-  padding: 12px 12px 0 12px;
+  padding: 5px 12px 0 12px;
   display: block;
 }
 
@@ -55,7 +57,7 @@
   flex: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  line-clamp: 3;
   overflow: hidden;
 }
 
@@ -98,4 +100,49 @@
   outline: 2px solid var(--color-accent, #2c7da0);
   outline-offset: 2px;
   border-radius: var(--radius-lg, 14px);
+}
+
+.card-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-add-to-cart {
+  margin: 0 16px 16px 16px;
+  padding: 10px 16px;
+  background: var(--color-accent, #2c7da0);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+
+.card-add-to-cart:hover {
+  filter: brightness(1.05);
+}
+
+.card-add-to-cart:active {
+  transform: scale(0.98);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: auto;
+  flex: 1;
+}
+
+.card {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

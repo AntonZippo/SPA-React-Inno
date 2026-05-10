@@ -32,6 +32,7 @@
   height: 100%;
   object-fit: cover;
   min-height: 400px;
+  padding-top: 10px;
 }
 
 .product-info {
@@ -96,7 +97,7 @@
 }
 
 .buy-button:hover {
-  background: #1f5e7a;
+  filter: brightness(1.05);
 }
 
 @media (max-width: 768px) {
@@ -148,7 +149,6 @@
     min-height: 55vh;
   }
 }
-
 
 .product-loading,
 .product-error,

@@ -87,14 +87,17 @@
   border-radius: var(--radius-sm, 6px);
   font-size: 0.9rem;
   font-weight: 500;
-  background: transparent;
+  background: #e3e4e4;
   color: var(--color-accent, #2c7da0);
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .autorize button:hover {
-  background: rgba(44, 125, 160, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--color-accent-hover, #1f5e7a);
   color: var(--color-accent-hover, #1f5e7a);
 }
@@ -141,4 +144,60 @@
   .autorize button {
     width: 100%;
   }
+}
+
+.home-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-accent, #2c7da0);
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--color-accent, #2c7da0);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.home-link:hover {
+  background: rgba(44, 125, 160, 0.1);
+  border-color: var(--color-accent-hover, #1f5e7a);
+  color: var(--color-accent-hover, #1f5e7a);
+  text-decoration: none;
+}
+
+.cart-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-accent, #2c7da0);
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--color-accent, #2c7da0);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.cart-link:hover {
+  background: rgba(44, 125, 160, 0.1);
+  border-color: var(--color-accent-hover, #1f5e7a);
+  color: var(--color-accent-hover, #1f5e7a);
+  text-decoration: none;
 }
