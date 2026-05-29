@@ -2,7 +2,7 @@ Products catalog (innoproject)
 
 <img width="401" height="140" alt="image" src="https://github.com/user-attachments/assets/717b915c-20c0-4303-8052-434312f36b3a" />
 
-[![Deployed with Vercel](https://img.shields.io/badge/deployed%20with-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://spa-react-98.vercel.app) - link to App.
+[![Deployed with Vercel](https://img.shields.io/badge/deployed%20with-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://react-spa-20.vercel.app/home) - link to App.
 
 A single-page React application that presents a product catalog backed by the public [DummyJSON](https://dummyjson.com/) REST API. Users can browse with category filters, price and rating filters (client-side), search products, open product detail pages, and use placeholder login and 404 routes.
 
